@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Negin Khodami – English Teacher</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-cCZFazbB9UkGxhSY+xgXKZRo6wQakIDqHp+LPAcWiBO1lIv8CkgDBvMVSiIyeu0QhHQyPa/YjE8+sN3x6h3WFw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">Negin K.</div>
+      <!-- Mobile menu toggle appears on small screens -->
+      <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#stats">Facts</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#resources">Practice</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="hero-content reveal">
+        <h1>Welcome to my class</h1>
+        <h2 class="subtitle">English Teacher, Mentor &amp; Guide</h2>
+        <p>
+          Inspiring students to reach their potential through engaging
+          language learning.
+        </p>
+        <a href="#about" class="btn">Discover more</a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="about-text reveal">
+          <h2>About Negin</h2>
+          <!--
+            The contents of this section are loaded from the file
+            assets/about.txt via JavaScript. To update the description, edit
+            that text file in your repository. The script will insert the
+            content here automatically.
+          -->
+          <div id="about-content"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section stats" id="stats">
+      <div class="container">
+        <h2 class="reveal">Facts &amp; Figures</h2>
+        <div class="stats-grid">
+          <div class="stat-item reveal">
+            <span id="studentsCount" class="counter" data-target="0" data-suffix="+">0</span>
+            <h3>Students Taught</h3>
+          </div>
+          <div class="stat-item reveal">
+            <span id="averageBand" class="counter" data-target="0">0</span>
+            <h3>Average Overall Band</h3>
+          </div>
+          <div class="stat-item reveal">
+            <span id="highestBand" class="counter" data-target="0">0</span>
+            <h3>Highest Overall Band</h3>
+          </div>
+          <div class="stat-item reveal">
+            <span id="sevenPlusCount" class="counter" data-target="0" data-suffix="+">0</span>
+            <h3>Students with Band 7+</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="section results" id="results">
+      <div class="container">
+        <h2 class="reveal">Best Student Results</h2>
+        <p class="reveal">
+          Hover over each card to see anonymised student scores and their individual results.
+        </p>
+        <!-- The list of student scorecards will be generated dynamically from
+             the students.json file. Each entry in the JSON will produce its own
+             result card. To add new students or edit existing ones, simply
+             update the file at assets/students.json. -->
+        <div class="cards" id="student-cards"></div>
+      </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="section resources" id="resources">
+      <div class="container">
+        <h2 class="reveal">Practice Materials</h2>
+        <p class="reveal">
+          Explore sample practice materials to improve your speaking and writing
+          skills.
+        </p>
+        <div class="resources-grid">
+          <div class="resource-card reveal">
+            <div class="icon"><i class="fas fa-comments"></i></div>
+            <h3>Speaking Practice</h3>
+            <p>Exercises to build fluency and confidence.</p>
+            <a href="resources/speaking.html" class="btn resource-btn">View</a>
+          </div>
+          <div class="resource-card reveal">
+            <div class="icon"><i class="fas fa-pen-nib"></i></div>
+            <h3>Writing Practice</h3>
+            <p>Tasks to enhance your writing skills.</p>
+            <a href="resources/writing.html" class="btn resource-btn">View</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+      <div class="container reveal">
+        <h2>Get in touch</h2>
+        <p>Feel free to reach out via any of the following methods.</p>
+        <div class="info">
+          <p><i class="fas fa-envelope"></i> <a href="mailto:Negin_khodami@yahoo.com">Negin_khodami@yahoo.com</a></p>
+          <p><i class="fab fa-telegram"></i> <a href="https://t.me/Negin_Khodami" target="_blank" rel="noopener">@Negin_Khodami</a></p>
+          <p><i class="fas fa-phone"></i> <a href="tel:+989134137958">+98 913 413 7958</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer with footnotes -->
+    <footer class="footer">
+      <div class="container">
+        <p>Designed with ❤️ to celebrate Negin’s dedication to teaching.</p>
+        <div class="footnotes">
+          <a id="ref-1" href="https://takeielts.britishcouncil.org/teach-ielts/test-information/ielts-scores-explained" target="_blank" rel="noopener">[1] British Council – Understanding and explaining IELTS scores</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

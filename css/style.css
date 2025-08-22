@@ -1,0 +1,599 @@
+/*
+ * Global Stylesheet for Negin Khodami's personal landing page.
+ *
+ * Defines colour variables, typography, layout and responsive rules.
+ */
+
+:root {
+  --primary: #4a90e2; /* vibrant blue for highlights */
+  --secondary: #f5f7fa; /* soft light background */
+  --accent: #f26c4f; /* warm accent colour */
+  --dark: #1b1b1b; /* dark background for contrast */
+  --light: #ffffff;
+  --text: #333333;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--secondary);
+  color: var(--text);
+  line-height: 1.6;
+  /* Avoid clipping horizontally overflowing elements; allow scroll if necessary */
+  overflow-x: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navbar */
+/*
+ * Navbar styling. The navigation bar remains fixed to the top of the page. To
+ * accommodate the full set of navigation links at typical laptop widths, the
+ * left/right padding has been reduced and the spacing between links shrunk.
+ * Flexbox with wrapping ensures that links will stack onto a second row
+ * gracefully if there still isn’t enough horizontal room. A translucent
+ * backdrop adds depth while keeping the text legible.
+ */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 12px 15px; /* reduced padding to give more room for nav links */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  row-gap: 6px; /* slightly smaller vertical gap between wrapped rows */
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--primary);
+}
+
+/* Menu toggle for smaller screens */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--primary);
+}
+
+/*
+ * Mobile navigation styles. On medium and small screens the list of links is
+ * hidden by default to conserve space and prevent clipping of the last
+ * item. A hamburger icon (menu-toggle) appears. When the user taps the
+ * icon, a `.open` class is applied to the navbar via JavaScript which
+ * reveals the links. The links are arranged vertically and fill the width of
+ * the screen. We trigger this layout on screens narrower than 1000px to
+ * avoid truncating the "Contact" link on laptops.
+ */
+@media (max-width: 1000px) {
+  .menu-toggle {
+    display: block;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 10px 0;
+    gap: 0;
+  }
+  .navbar.open .nav-links {
+    display: flex;
+  }
+  .nav-links li {
+    width: 100%;
+    text-align: left;
+    padding: 8px 15px;
+  }
+  .nav-links li a {
+    font-size: 1rem;
+    display: block;
+    width: 100%;
+  }
+
+  /* Shrink the logo slightly to free up horizontal space on medium screens */
+  .logo {
+    font-size: 1.1rem;
+    margin-right: 10px;
+  }
+}
+
+/*
+ * The navigation bar contains the site logo on the left and the links on the right. In order to
+ * prevent the last link from being clipped on medium‑sized screens, the nav link container takes
+ * up any remaining horizontal space (flex: 1). Links will wrap onto a second line if there isn’t
+ * enough room, rather than being truncated. A right‑aligned layout keeps the links grouped.
+ */
+/*
+ * Container for the navigation links. It flexes to fill the available
+ * horizontal space so the links can use as much width as needed. On
+ * medium‑sized screens this helps prevent the last link from being clipped.
+ */
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 auto;
+  justify-content: flex-end;
+  gap: 8px; /* reduced gap between links */
+  white-space: normal;
+}
+
+/* Navigation link styles. Slightly smaller font size to save space. */
+.nav-links li a {
+  font-weight: 600;
+  font-size: 0.8rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: var(--accent);
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  padding: 0 20px;
+  color: var(--light);
+  background-image: linear-gradient(135deg, var(--primary), var(--accent));
+  position: relative;
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  height: 48px;
+  margin-bottom: 15px;
+  color: var(--light);
+}
+
+.hero p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 25px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: var(--light);
+  color: var(--primary);
+  font-weight: 600;
+  border-radius: 30px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--primary);
+  color: var(--light);
+}
+
+/* Generic Section styling */
+.section {
+  padding: 80px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.25rem;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+/* About Section */
+.about .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.about-text {
+  flex: 1 1 300px;
+}
+
+.about-text p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.about-text em {
+  color: var(--accent);
+}
+
+/* Results Section */
+.results .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.card {
+  background-color: var(--light);
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card .icon {
+  font-size: 40px;
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.card p {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* Style for the sub‑score line inside result cards */
+.card .score {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-top: 5px;
+}
+
+/* Contact Section */
+.contact {
+  background-color: var(--dark);
+  color: var(--light);
+}
+
+.contact .info {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 1rem;
+}
+
+.contact .info i {
+  color: var(--accent);
+  margin-right: 8px;
+}
+
+.contact .info a {
+  color: var(--light);
+  text-decoration: underline;
+}
+
+.contact .info a:hover {
+  color: var(--accent);
+}
+
+/* ------------------------------------------------------------
+   Enhanced visuals and animations
+   - Animated gradient background for the hero section.
+   - Result cards display student scorecards with a hover overlay.
+-------------------------------------------------------------- */
+
+/* Animate the background gradient on the hero section to create
+   a subtle shifting effect. */
+.hero {
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Layout for results cards: we override the base grid defined earlier to ensure
+   that result cards using images remain responsive. */
+.results .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.result-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.result-card img {
+  width: 100%;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.result-card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  /* Start hidden and slide up when hovered */
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.result-card:hover img {
+  transform: scale(1.1);
+}
+
+/* When hovering over a result card, slide the overlay up and fade it in */
+.result-card:hover .overlay {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.result-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+  color: #fff;
+}
+
+.result-card p {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+  color: #fff;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  background-color: var(--secondary);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer .footnotes {
+  margin-top: 10px;
+  font-size: 0.8rem;
+}
+
+.footer .footnotes a {
+  color: var(--primary);
+  margin: 0 4px;
+}
+
+/* Reveal animation classes. Elements with the 'reveal' class start hidden
+   and slide/fade in when they receive the 'show' class from JavaScript. */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive typography adjustments */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+  /* When on smaller screens, allow the navigation links to occupy their own row. The logo takes
+     up the full width and the links centre themselves beneath it. Reduce the gap to save space. */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .logo {
+    margin-bottom: 10px;
+  }
+  .nav-links {
+    justify-content: flex-start;
+    gap: 15px;
+  }
+  .nav-links li a {
+    font-size: 0.9rem;
+  }
+}
+
+/* On medium‑width screens (e.g. laptops around 1000px), switch the navbar to a stacked layout. This
+   prevents long navigation labels from being truncated by forcing the links onto their own line. */
+@media (max-width: 1150px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-links {
+    justify-content: flex-start;
+    gap: 15px;
+    width: 100%;
+  }
+  .nav-links li a {
+    font-size: 0.95rem;
+  }
+  .logo {
+    margin-bottom: 8px;
+  }
+}
+
+/* Collapse the navigation into a vertical menu on small screens. A hamburger icon is shown to
+   toggle the menu. */
+@media (max-width: 1050px) {
+  .navbar {
+    flex-direction: row;
+    align-items: center;
+  }
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    display: none;
+    margin-top: 10px;
+  }
+  .navbar.open .nav-links {
+    display: flex;
+  }
+}
+
+/* Stats Section */
+.stats {
+  background-color: var(--secondary);
+}
+
+.stats .container {
+  text-align: center;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.stat-item {
+  background: var(--light);
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+}
+
+.counter {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.stat-item h3 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+/* Resources Section */
+.resources {
+  background-color: var(--light);
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.resource-card {
+  background: var(--light);
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.resource-card .icon {
+  font-size: 40px;
+  color: var(--accent);
+  margin-bottom: 15px;
+}
+
+.resource-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+.resource-card p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.resource-card .resource-btn {
+  padding: 10px 25px;
+  border-radius: 25px;
+  background-color: var(--primary);
+  color: var(--light);
+  font-weight: 600;
+  display: inline-block;
+  transition: background 0.3s ease;
+}
+
+.resource-card .resource-btn:hover {
+  background-color: var(--accent);
+  color: var(--light);
+}

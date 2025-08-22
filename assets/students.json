@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Zahra Amini",
+    "overall": 8.0,
+    "listening": 8.5,
+    "reading": 9.0,
+    "writing": 7.0,
+    "speaking": 8.0,
+    "image": "assets/students/student1.jpg"
+  },
+  {
+    "name": "Hanieh Giahchin",
+    "overall": 7.5,
+    "listening": 8.5,
+    "reading": 7.0,
+    "writing": 7.0,
+    "speaking": 7.0,
+    "image": "assets/students/student2.jpg"
+  },
+  {
+    "name": "Mahdis Fathi",
+    "overall": 7.5,
+    "listening": 8.0,
+    "reading": 8.0,
+    "writing": 6.5,
+    "speaking": 7.5,
+    "image": "assets/students/student3.jpg"
+  },
+  {
+    "name": "Ali Yazdani",
+    "overall": 7.5,
+    "listening": 8.5,
+    "reading": 7.5,
+    "writing": 6.5,
+    "speaking": 7.0,
+    "image": "assets/students/student4.jpg"
+  },
+  {
+    "name": "Melika Aghajanian",
+    "overall": 7.0,
+    "listening": 7.0,
+    "reading": 7.5,
+    "writing": 6.5,
+    "speaking": 7.5,
+    "image": "assets/students/student5.jpg"
+  },
+  {
+    "name": "Zahra Asadi",
+    "overall": 7.0,
+    "listening": 6.5,
+    "reading": 7.0,
+    "writing": 7.0,
+    "speaking": 6.5,
+    "image": "assets/students/student6.jpg"
+  },
+  {
+    "name": "Arshia Hemmat",
+    "overall": 7.5,
+    "listening": 7.5,
+    "reading": 8.0,
+    "writing": 7.0,
+    "speaking": 6.5,
+    "image": "assets/students/student7.jpg"
+  },
+  {
+    "name": "Nahid Amoozad",
+    "overall": 7.0,
+    "listening": 7.0,
+    "reading": 8.0,
+    "writing": 6.5,
+    "speaking": 6.5,
+    "image": "assets/students/student9.jpg"
+  }
+]
