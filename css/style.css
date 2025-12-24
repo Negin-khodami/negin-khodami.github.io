@@ -541,3 +541,25 @@ a {
   
   .contact .info { flex-direction: column; gap: 10px; }
 }
+
+/* --- Exam Type Badge --- */
+.exam-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.badge-ielts {
+  background-color: var(--primary); /* Blue */
+  color: var(--light);
+}
+
+.badge-toefl {
+  background-color: var(--accent);  /* Gold/Orange */
+  color: var(--dark);
+}
