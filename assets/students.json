@@ -136,7 +136,28 @@
     "listening": 8.5,
     "reading": 8.5,
     "writing": 7.0,
-    "speaking": 7,
+    "speaking": 7.0,
     "image": "assets/students/student15.jpg"
+  },
+  {
+     "name": "Atefeh Alimohammadi",
+    "type": "IELTS",
+    "overall": 7.0,
+    "listening": 7.0,
+    "reading": 7.0,
+    "writing": 6.5,
+    "speaking": 7.0,
+    "image": "assets/students/student16.jpg"
+  },
+  {
+     "name": "Hossein Borin Nejad",
+    "type": "IELTS",
+    "overall": 8.0,
+    "listening": 8.5,
+    "reading": 8.5,
+    "writing": 7.0,
+    "speaking": 7.0,
+    "image": "assets/students/student17.jpg"
   }
 ]
+    
